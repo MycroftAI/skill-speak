@@ -25,9 +25,6 @@ from mycroft import MycroftSkill, intent_handler
 # TODO - Localization
 
 class SpeakSkill(MycroftSkill):
-    def __init__(self):
-        super(SpeakSkill, self).__init__(name="SpeakSkill")
-
     @intent_handler(IntentBuilder("").require("Speak").require("Words"))
     def speak_back(self, message):
         """
