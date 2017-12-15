@@ -38,8 +38,16 @@ class SpeakSkill(MycroftSkill):
             self.register_regex(prefix + ' ' + suffix_regex)
 
     @intent_handler(IntentBuilder("").require("Speak").require("Words"))
-    def handle_speak_intent(self, message):
-        words = message.data.get("Words")
+    def speak_back(self, message):
+        """
+            Repeat the utterance back to the user.
+
+            TODO: The method is very english centric and will need
+                  localization.
+        """
+        # Get everything after say/speak/etc. and speak it back
+        words = message.data.get('utterance').split(message.data['Speak'])[1]
+        words = words.strip()
         self.speak(words)
 
     def stop(self):
