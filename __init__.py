@@ -19,9 +19,7 @@
 from adapt.intent import IntentBuilder
 from os.path import dirname, join
 
-from mycroft.skills.core import MycroftSkill
-
-__author__ = 'jasonehines'
+from mycroft import MycroftSkill, intent_handler
 
 
 # TODO - Localization
@@ -31,18 +29,15 @@ class SpeakSkill(MycroftSkill):
         super(SpeakSkill, self).__init__(name="SpeakSkill")
 
     def initialize(self):
-        prefixes = [
-            'speak', 'say', 'repeat']
+        # Create regexes to make sure something follows the speak command
+        prefixes = ['speak', 'say', 'repeat']
         self.__register_prefixed_regex(prefixes, "(?P<Words>.*)")
-
-        intent = IntentBuilder("SpeakIntent").require(
-            "SpeakKeyword").require("Words").build()
-        self.register_intent(intent, self.handle_speak_intent)
 
     def __register_prefixed_regex(self, prefixes, suffix_regex):
         for prefix in prefixes:
             self.register_regex(prefix + ' ' + suffix_regex)
 
+    @intent_handler(IntentBuilder("").require("Speak").require("Words"))
     def handle_speak_intent(self, message):
         words = message.data.get("Words")
         self.speak(words)

@@ -1,5 +1,12 @@
-# Speak Skill
+## Speak
+Repeats what was just said
 
-## Usage:
-* `say open source AI`
-* `speak Mycroft`
+## Description 
+
+
+## Examples 
+* "say open source AI"
+* "speak Mycroft"
+
+## Credits 
+Mycroft AI
