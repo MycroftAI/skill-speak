@@ -28,15 +28,6 @@ class SpeakSkill(MycroftSkill):
     def __init__(self):
         super(SpeakSkill, self).__init__(name="SpeakSkill")
 
-    def initialize(self):
-        # Create regexes to make sure something follows the speak command
-        prefixes = ['speak', 'say', 'repeat']
-        self.__register_prefixed_regex(prefixes, "(?P<Words>.*)")
-
-    def __register_prefixed_regex(self, prefixes, suffix_regex):
-        for prefix in prefixes:
-            self.register_regex(prefix + ' ' + suffix_regex)
-
     @intent_handler(IntentBuilder("").require("Speak").require("Words"))
     def speak_back(self, message):
         """
