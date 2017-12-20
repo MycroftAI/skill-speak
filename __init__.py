@@ -19,32 +19,23 @@
 from adapt.intent import IntentBuilder
 from os.path import dirname, join
 
-from mycroft.skills.core import MycroftSkill
-
-__author__ = 'jasonehines'
+from mycroft import MycroftSkill, intent_handler
 
 
 # TODO - Localization
 
 class SpeakSkill(MycroftSkill):
-    def __init__(self):
-        super(SpeakSkill, self).__init__(name="SpeakSkill")
+    @intent_handler(IntentBuilder("").require("Speak").require("Words"))
+    def speak_back(self, message):
+        """
+            Repeat the utterance back to the user.
 
-    def initialize(self):
-        prefixes = [
-            'speak', 'say', 'repeat']
-        self.__register_prefixed_regex(prefixes, "(?P<Words>.*)")
-
-        intent = IntentBuilder("SpeakIntent").require(
-            "SpeakKeyword").require("Words").build()
-        self.register_intent(intent, self.handle_speak_intent)
-
-    def __register_prefixed_regex(self, prefixes, suffix_regex):
-        for prefix in prefixes:
-            self.register_regex(prefix + ' ' + suffix_regex)
-
-    def handle_speak_intent(self, message):
-        words = message.data.get("Words")
+            TODO: The method is very english centric and will need
+                  localization.
+        """
+        # Get everything after say/speak/etc. and speak it back
+        words = message.data.get('utterance').split(message.data['Speak'])[1]
+        words = words.strip()
         self.speak(words)
 
     def stop(self):
