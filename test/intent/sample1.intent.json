@@ -1,8 +1,9 @@
 {
-  "utterance": "Speak Hello Jason",
-  "intent_type": "SpeakIntent",
+  "utterance": "speak hello jason",
+  "intent_type": "speak_back",
   "intent": {
-    "SpeakKeyword": "speak",
-   "Words": "hello jason"
-  }
+    "Speak": "speak",
+    "Words": "hello jason"
+  },
+  "expected_response": "hello jason"
 }
