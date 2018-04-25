@@ -36,7 +36,7 @@ class SpeakSkill(MycroftSkill):
         # Remove everything up to the speak keyword and repeat that
         utterance = message.data.get('utterance')
         repeat = re.sub('^.*?' + message.data['Speak'], '', utterance)
-        self.speak(repeat)
+        self.speak(repeat.strip())
 
     def stop(self):
         pass
