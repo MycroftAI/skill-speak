@@ -1,0 +1,3 @@
+speak {{ sentence }}
+say {{ sentence }}
+repeat {{ sentence }}

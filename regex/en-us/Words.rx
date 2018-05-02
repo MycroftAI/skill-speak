@@ -1,3 +1,0 @@
-say (?P<Words>.*)
-speak (?P<Words>.*)
-repeat (?P<Words>.*)
