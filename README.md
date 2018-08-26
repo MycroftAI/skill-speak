@@ -1,9 +1,8 @@
-## Speak
+# <img src='https://rawgithub.com/FortAwesome/Font-Awesome/master/advanced-options/raw-svg/solid/bullhorn.svg ' card_color='#22a7f0' width='50' height='50' style='vertical-align:bottom'/> Speak
 Make Mycroft repeat whatever you want
 
-## Description 
-Turn Mycroft into a parrot.  Speak a phrase and listen to it repeated in
-Mycroft's dulcet voice!
+## About 
+Turn Mycroft into a parrot.  Speak a phrase and listen to it repeated in Mycroft's selected voice. 
 
 ## Examples 
 * "say Goodnight, Gracie"
@@ -11,4 +10,12 @@ Mycroft's dulcet voice!
 * "speak I can say anything you'd like!"
 
 ## Credits 
-Mycroft AI
+Mycroft AI (@MycroftAI)
+
+## Category
+**Daily**
+
+## Tags
+#speak
+#say
+#repeat
