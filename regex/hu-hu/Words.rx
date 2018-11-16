@@ -1,0 +1,3 @@
+mondd (?P<Words>.*)
+mondd (utánam|) (azt hogy|) (?P<Words>.*)
+ismételd (utánam|) (azt hogy|) (?P<Words>.*)
