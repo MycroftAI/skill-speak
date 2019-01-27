@@ -1,2 +1,3 @@
-ripeti (?P<Words>.*)
+di' (?P<Words>.*)
 pronuncia (?P<Words>.*)
+ripeti (?P<Words>.*)
