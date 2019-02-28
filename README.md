@@ -13,7 +13,7 @@ Turn Mycroft into a parrot.  Speak a phrase and listen to it repeated in Mycroft
 Mycroft AI (@MycroftAI)
 
 ## Category
-**Daily**
+**Entertainment**
 
 ## Tags
 #speak
