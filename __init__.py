@@ -31,9 +31,10 @@ class SpeakSkill(MycroftSkill):
                   localization.
         """
         # Remove everything up to the speak keyword and repeat that
-        utterance = message.data.get('utterance')
-        repeat = re.sub('^.*?' + message.data['Speak'], '', utterance)
-        self.speak(repeat.strip())
+        with self.activity():
+            utterance = message.data.get('utterance')
+            repeat = re.sub('^.*?' + message.data['Speak'], '', utterance)
+            self.speak(repeat.strip(), wait=True)
 
     def stop(self):
         pass
