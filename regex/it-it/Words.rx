@@ -1,3 +1,2 @@
-dici (?P<Words>.*)
 pronuncia (?P<Words>.*)
 ripeti (?P<Words>.*)
